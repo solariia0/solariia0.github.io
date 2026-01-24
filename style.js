@@ -1,19 +1,15 @@
 const proj_bttn = document.querySelector("#proj-bttn");
 
 
-const entry = document.querySelector("#projects");
+const entry = document.querySelector("#proj-sect");
 const landing = document.querySelector("#landing");
 
 const observer = new IntersectionObserver(
   ([entry]) => {
     if (entry.isIntersecting) {
-      console.log('hi')
-      document.body.classList.add("active");
-      document.body.style.background =
-      "linear-gradient(to right, var(--bg-main) 84%, var(--bg-accent) 84%)";
-      document.body.style.gridTemplateColumns = '85fr 15fr';
+      document.body.classList.add("proj");
     }  else {
-      document.body.classList.remove("active");
+      document.body.classList.remove("proj");
     }
   },
   {
@@ -26,22 +22,34 @@ observer.observe(entry);
 
 
 const entry2 = document.querySelector("#illustrations");
+const navButtons = document.querySelectorAll('.nav-bttn');
+const headings = document.querySelectorAll('h1');
+
+
 
 const observer2 = new IntersectionObserver(
   ([entry]) => {
     if (entry.isIntersecting) {
-      console.log('hi')
-      document.body.classList.add("active");
-      document.body.style.background =
-      "linear-gradient(to right, var(--bold-txt) 84%, var(--bg-main) 84%)";
-      document.body.style.gridTemplateColumns = '85fr 15fr';
-      document.querySelector('#illust').style.color = 'var(--bg-main)';
+      document.body.classList.add("illust");
+      navButtons.forEach((elem) => {
+        console.log(elem);
+        elem.classList.add('illust');
+      });
+      headings.forEach((elem) => {
+        elem.classList.add('illust');
+      });
     }  else {
-      document.body.classList.remove("active");
+      document.body.classList.remove("illust");
+      navButtons.forEach((elem) => {
+        elem.classList.remove('illust');
+      });
+      headings.forEach((elem) => {
+        elem.classList.remove('illust');
+      });
     }
   },
   {
-    threshold: 0.3
+    threshold: 0.7
   }
 );
 
