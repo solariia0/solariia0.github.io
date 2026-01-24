@@ -1,0 +1,82 @@
+:root {
+    --bg-accent: rgb(255, 255, 255);
+    --bg-main: rgb(20, 46, 94);
+    --bttn: rgb(112, 184, 184);
+    --skill-bg: rgb(112, 184, 184);
+}
+
+body {
+    background: linear-gradient(
+        to right, var(--bg-accent) 20%, 
+        var(--bg-main) 20%,
+        var(--bg-main) 80%, 
+        var(--bg-accent) 80%
+        );
+    display: grid;
+    grid-template-columns: 75fr 25fr;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+
+img {
+    width: 20vw;
+    border-radius: 5px;
+}
+
+#img-name {
+    position: relative;
+}
+
+#img-name::after {
+    content: "KIRRA";
+    position: absolute;
+    left: 40%;
+    bottom: -10%;
+    font-size: 70px;
+    color: var(--bg-accent);
+}
+
+
+#bio {
+    margin-left: 15vw;
+    margin-top: 10vw;
+    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+#skill-section {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.skills {
+    background-color: var(--bttn);
+    border-radius: 5px;
+    margin: 5%;
+    opacity: 70%;
+}
+
+nav {
+    display: grid;
+    padding-top: 50%;
+    padding-bottom: 50%;
+}
+
+.link-bttn {
+    margin: 1%;
+    width: max-content;
+    padding: 5% 15% 5% 15%;
+    height: max-content;
+    border-style: none;
+    text-align: right;
+    border-radius: 5px;
+    background-color: var(--bttn);
+}
+
+
