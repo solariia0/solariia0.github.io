@@ -30,22 +30,9 @@ const headings = document.querySelectorAll('h1');
 const observer2 = new IntersectionObserver(
   ([entry]) => {
     if (entry.isIntersecting) {
-      document.body.classList.add("illust");
-      navButtons.forEach((elem) => {
-        console.log(elem);
-        elem.classList.add('illust');
-      });
-      headings.forEach((elem) => {
-        elem.classList.add('illust');
-      });
+      document.body.classList.add("proj");
     }  else {
-      document.body.classList.remove("illust");
-      navButtons.forEach((elem) => {
-        elem.classList.remove('illust');
-      });
-      headings.forEach((elem) => {
-        elem.classList.remove('illust');
-      });
+      document.body.classList.remove("proj");
     }
   },
   {
