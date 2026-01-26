@@ -41,3 +41,24 @@ const observer2 = new IntersectionObserver(
 );
 
 observer2.observe(entry2);
+
+
+const preview = document.querySelector('.main-preview');
+const images = document.querySelector('.img-roll').childNodes;
+
+images.forEach((elem) => {
+  if (elem.tagName === 'IMG') {
+    
+    elem.addEventListener('click', () => {
+      if (preview.children.length > 1) {
+      console.log('true')
+      preview.removeChild(preview.lastChild)
+    }
+      var current = document.createElement('img');
+      console.log(elem.src);
+      current.src = elem.src
+      current.classList.add('view')
+      preview.appendChild(current);
+    })
+  }
+});
