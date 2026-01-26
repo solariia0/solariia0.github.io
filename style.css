@@ -6,6 +6,20 @@
     --alt-txt: #457B9D;
 }
 
+@media only screen and (min-width: 992px) {
+    #landing {
+        padding-bottom: 20px;
+    }
+
+    .img-roll {
+        margin-left: 20px;
+    }
+
+    .img-roll > img {
+        width: 150px;
+    }
+}
+
 body {
     background: linear-gradient(
         to right, var(--bg-accent) 20%, 
@@ -203,6 +217,12 @@ h1 {
     margin-top: 1rem;
 }
 
+.img {
+    height: 550px;
+    background-color: var(--bttn);
+    width: 250px;
+}
+
 #proj-items {
     display: flex;
     grid-auto-flow: column;
@@ -240,7 +260,7 @@ h1 {
     z-index: 100;
     width: inherit;
     position: absolute;
-    bottom: 0;
+    bottom: -35px;
     transition: 0.3s padding-bottom ease-in;
 }
 
@@ -272,24 +292,38 @@ a {
     display: grid;
     grid-template-columns: 1fr 4fr;
     margin: 2rem;
+    gap: 0px;
 }
 
 .main-preview {
     height: 90%;
-    background-color: #E63946;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.view {
+    height: 82vh;
+    animation: slide 0.5s ease;
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
 }
 
 .img-roll {
     display: grid;
-    gap: 10%;
+    gap: 3%;
     overflow: scroll;
     width: max-content;
+    scrollbar-width: none;
 }
 
-.img-roll > img {
-    width: 100px;
+#content::-webkit-scrollbar {
+  display: none;
 }
 
-.view {
-    width: 200px;
-}

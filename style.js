@@ -48,11 +48,10 @@ const images = document.querySelector('.img-roll').childNodes;
 
 images.forEach((elem) => {
   if (elem.tagName === 'IMG') {
-    
     elem.addEventListener('click', () => {
-      if (preview.children.length > 1) {
-      console.log('true')
-      preview.removeChild(preview.lastChild)
+      if (preview.childNodes.length > 1) {
+      last = document.querySelector('.view');
+      preview.removeChild(last);
     }
       var current = document.createElement('img');
       console.log(elem.src);
@@ -62,3 +61,9 @@ images.forEach((elem) => {
     })
   }
 });
+
+
+function isHidden(el) {
+    console.log(el.offsetParent === null)
+}
+document.querySelector('#content').addEventListener('scroll', () => {isHidden(document.querySelector('#bio'))})
