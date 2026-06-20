@@ -2,3 +2,4 @@ todo
 delete kantan-2 img
 erase unusde variables
 try and fix the body bg
+add images to projects

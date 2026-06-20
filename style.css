@@ -221,6 +221,17 @@ h1 {
     height: 550px;
     background-color: var(--bttn);
     width: 250px;
+    overflow: hidden;
+}
+
+.proj-img {
+    height: 500px;
+    opacity: 80%;
+}
+
+.proj-img:hover {
+    opacity: 100%;
+    transition: opacity ease-in .5s;
 }
 
 #proj-items {
@@ -339,12 +350,26 @@ a {
 }
 
 #design-gallery {
-    display: flexbox;
-    justify-content: center;
+    display: grid;
+    margin-left: 10vw;
 }
 
-.d-img {
-    width: 15%;
+.d-group section {
+    border-color: white;
+    border-width: 2px;
     border-radius: 2%;
+}
+
+.d-group h3 {
+    color: white;
+}
+
+.anisoc>.d-img, .avisoc>.d-img {
+    border-radius: 2%;
+    width: 10%;
+}
+
+.PGJ2024 > .d-img {
+    height: 20%;
 }
 
