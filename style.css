@@ -291,6 +291,7 @@ a {
 #gallery {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    padding-bottom: 80px;
     margin: 2rem;
     gap: 0px;
 }
@@ -321,9 +322,29 @@ a {
     overflow: scroll;
     width: max-content;
     scrollbar-width: none;
+    height: 80vh;
 }
 
 #content::-webkit-scrollbar {
   display: none;
+}
+
+.gallery-bttn {
+    height: 50px;
+}
+
+#design {
+    margin-left: 15vw;
+    display: grid;
+}
+
+#design-gallery {
+    display: flexbox;
+    justify-content: center;
+}
+
+.d-img {
+    width: 15%;
+    border-radius: 2%;
 }
 
