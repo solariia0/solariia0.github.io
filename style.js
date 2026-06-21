@@ -1,63 +1,28 @@
-const proj_bttn = document.querySelector("#proj-bttn"); // get rid of prob
+const bgChecker = document.querySelector('#bg-checker');
 
+const modeObserver = new IntersectionObserver((entries) => {
+  const [e] = entries;
+  document.body.classList.toggle('proj', !e.isIntersecting);
+}, {
+  threshold: 0.05,
+});
 
-const entry = document.querySelector("#proj-sect");
-const landing = document.querySelector("#landing"); // get rid of prob
+modeObserver.observe(bgChecker);
 
-const observer = new IntersectionObserver(
-  ([entry]) => {
-    if (entry.isIntersecting) {
-      document.body.classList.add("proj");
-    }  else {
-      document.body.classList.remove("proj");
-    }
-  },
-  {
-    threshold: 0.1
-  }
-);
+/*
+const illustBg = document.querySelector('#illust-bg');
+const illustHead = document.querySelector('#illustHead');
 
-observer.observe(entry);
+const illustBgObserve = new IntersectionObserver((entries) => {
+  const [e] = entries;
+  document.body.classList.toggle('illustbg', e.isIntersecting);
+  illustHead.classList.toggle('illust', e.isIntersecting);
+}, {
+  threshold: 0.05,
+});
 
-
-
-const entry2 = document.querySelector("#illustrations");
-const navButtons = document.querySelectorAll('.nav-bttn'); // get rid of prob
-const headings = document.querySelectorAll('h1'); // get rid of prob
-
-const observer2 = new IntersectionObserver(
-  ([entry]) => {
-    if (entry.isIntersecting) {
-      document.body.classList.add("proj");
-    }  else {
-      document.body.classList.remove("proj");
-    }
-  },
-  {
-    threshold: 0.7
-  }
-);
-
-observer2.observe(entry2);
-
-const designSec = document.querySelector("#designs");
-// observer to check if the design page is visible
-// adds proj (change the name) to edit body color to solid blue
-const designSecIsVisible = new IntersectionObserver(
-  ([entry]) => {
-    if (entry.isIntersecting) {
-      document.body.classList.add("proj");
-    }  else {
-      document.body.classList.remove("proj");
-    }
-  },
-  {
-    threshold: 0.7
-  }
-);
-
-observer2.observe(designSec);
-
+illustBgObserve.observe(illustBg);
+*/
 
 const preview = document.querySelector('.main-preview');
 const images = document.querySelector('.img-roll').childNodes;
@@ -77,9 +42,3 @@ images.forEach((elem) => {
     })
   }
 });
-
-
-function isHidden(el) {
-    console.log(el.offsetParent === null)
-}
-document.querySelector('#content').addEventListener('scroll', () => {isHidden(document.querySelector('#bio'))})
