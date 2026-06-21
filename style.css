@@ -161,6 +161,16 @@ nav {
     font-weight: bold;
 }
 
+.contact {
+    color: var(--bold-txt);
+    border-color: var(--bold-txt);
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: medium;
+    background-color: var(--bg-main);
+}
+
 @keyframes slide-in {
     from {
         opacity: 0;
@@ -351,12 +361,16 @@ a {
 
 #design-gallery {
     display: grid;
-    margin-left: 10vw;
+    grid-template-areas: 
+    "ani game"
+    "avi game";
+    margin-left: 2vw;
+    gap: 20px;
 }
 
 .d-group section {
     border-color: white;
-    border-width: 2px;
+    border-width: 10px;
     border-radius: 2%;
 }
 
@@ -364,12 +378,20 @@ a {
     color: white;
 }
 
-.anisoc>.d-img, .avisoc>.d-img {
-    border-radius: 2%;
-    width: 10%;
+.PGJ2024 {
+    grid-area: game;
 }
 
-.PGJ2024 > .d-img {
-    height: 20%;
+.d-img {
+    height: 250px;
+    border-radius: 5px;
 }
 
+.sprite {
+    height: 150px;
+}
+
+#copyright {
+    color: #457B9D;
+    font-size: large;
+}
