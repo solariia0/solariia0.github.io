@@ -20,6 +20,10 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: linear-gradient(
         to right, var(--white) 20%, 
@@ -58,6 +62,7 @@ body.illustbg {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 #content::-webkit-scrollbar {
